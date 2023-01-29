@@ -74,7 +74,7 @@ function getVowels(text) {
      let consonants = "bBcCdDfFgGhHjJkKlLmMnNpPqQrRsStTvVwWxXyYzZ"
      let consonantsCount = 0;
 
-     forEach(i = 0 ; i < (text).length ;  i++ ) {
+     for(i = 0 ; i < (text).length ;  i++ ) {
         if (consonants.indexOf(text[i] !== -1 )) {
 
         consonantsCount++
