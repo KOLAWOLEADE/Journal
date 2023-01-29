@@ -3,13 +3,18 @@
 $(document).ready(function(){
     $("#journal").submit(function(event){
         event.preventDefault();
-        const passage = $("#sentence").val()
-        const word = $("#Body").val()
+        $(".show-Tittle").show();
+        $("#sentence").html();
+        const passage = $("#sentence").val();
+        const word = $("#Body").val();
         const wordCount = wordCounter(passage);
-        const vowelsCount = vowelCounter(passage)
-        const consonantCount = consonantCounter(passage)
+        const vowelsCount = vowelCounter(passage);
+        const consonantsCount = consonantsCounter(passage);
+        const journal = new Journal(wordCount,vowelsCount,consonantsCount)
+        const Tittles = journal.checktype()
         $("#total-count").html(wordCount);
         $("#vowels-count").html(vowelsCount);
-        $("#consonant-count").html(consonantCount);
+        $("#consonants-count").html(consonantsCount);
+        $('#Tittles').append("<p>" + Tittles + "</p>");
     })
 })
